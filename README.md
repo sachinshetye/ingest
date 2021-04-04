@@ -1,15 +1,13 @@
 ### How to run the program
 
  ```
- git clone the repository
- Open App.java in an IDE (tested on vscode, intellij)
- Update lines 17, 18, 19 with inputPath, changesPath, outputPath
- 
- NOTE changes.json needs to be in the json format as supplied 
- 
- mvn clean install
- Open App.java in an IDE (tested on vscode, intellij) 
- Run the main program
+ NOTE changes.json needs to be in the json format as supplied. It is fine to add additional entries to it. 
+
+ 1. git clone the repository
+ 2. Open App.java in an IDE (tested on vscode, intellij)
+ 3. Update lines 17, 18, 19 with inputPath, changesPath, outputPath 
+ 4. mvn clean install
+ 5. Run the main program
  
  O/P of a successful run
  
@@ -59,8 +57,4 @@ By having different nodes manage different tables, the tables can scale independ
 The changes to be applied can be thought of as a task list. All the tasks can be added to a queue.
 There can be few worker nodes that take ownership of the tasks in queue and execute them.
 Depending on the requirements, we can either implement a pull or push model for task allocation to workers.
-If the task list is significantly large, by adding more worker nodes a.k.a autoscaling we can achieve horizontal scaling. 
-
-
-
-# ingest
+If the task list is significantly large, by adding more worker nodes a.k.a autoscaling we can achieve horizontal scaling.
