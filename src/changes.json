@@ -1,0 +1,41 @@
+{
+    "tasks" : [
+      {
+            "operation": "create_pl",
+            "id": "4",
+            "user_id": "1",
+            "song_ids": [
+                "36",
+                "37"
+            ]
+      }, {
+        "operation": "create_pl",
+        "id": "5",
+        "user_id": "7",
+        "song_ids": [
+            "4",
+            "5"
+        ]
+    },  { 
+            "operation": "update_pl",
+            "id": "1",
+            "song_ids": [
+            "15",
+            "16"
+            ]
+    }, {
+            "operation": "update_pl",
+            "id": "4",
+            "song_ids": [
+            "39",
+            "40"
+            ] 
+    }, {
+            "operation" : "delete_pl",
+            "id": "3"   
+      }, { 
+            "operation" : "delete_pl",
+            "id": "2"   
+      }
+    ]
+}
