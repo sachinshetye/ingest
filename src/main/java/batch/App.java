@@ -22,6 +22,9 @@ public class App
         
         // User/PlayList/SongNodes can be thought of generic nodes used for horizontal scaling
         // with DHT-Distributed Hash Table aka Consistent Hashing
+        
+        // The data should be stored in at least two nodes to add redundancy.
+        // By having different nodes manage different tables, the tables can scale independently of each other.
         ArrayList<ArrayList<JSONObject> > UserNodes = initNodes("users", "name", "string", input);
         ArrayList<ArrayList<JSONObject> > PlayListNodes = initNodes("playlists", "id", "int", input);
         ArrayList<ArrayList<JSONObject> > SongNodes = initNodes("songs", "id", "int", input);
@@ -33,7 +36,12 @@ public class App
         Queue<Object> taskQueue = getTaskQueue();
         addChangesToTaskQueue(taskQueue, changes);
         
-        int WORKER_COUNT = 5; 
+        int WORKER_COUNT = 5;
+        // There can be few worker nodes that take ownership of the tasks in queue and execute the tasks independent
+        // of each other
+        // The parallel or concurrent task execution provides the scalability
+
+        // PlayListNodes is updated in place, taskQueue contains the changes
         processTasksFromQueue(taskQueue, PlayListNodes, createWorkers(WORKER_COUNT));
 
         try {

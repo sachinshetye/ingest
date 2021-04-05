@@ -55,6 +55,7 @@ By having different nodes manage different tables, the tables can scale independ
 * For large changes.json
 
 The changes to be applied can be thought of as a task list. All the tasks can be added to a queue.
-There can be few worker nodes that take ownership of the tasks in queue and execute them.
+There can be few worker nodes that take ownership of the tasks in queue and execute the tasks in parallel.
+The parallel or concurrent task execution provides the scalability.
 Depending on the requirements, we can either implement a pull or push model for task allocation to workers.
 If the task list is significantly large, by adding more worker nodes a.k.a autoscaling we can achieve horizontal scaling.
