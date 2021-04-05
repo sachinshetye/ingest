@@ -30,7 +30,7 @@ Process finished with exit code 0
 
 ### Assumptions
 
-1. changes.json data is validated for correctness. i.e. the songs, playlists data it contains are valid.
+1. changes.json data is pre-validated for correctness. i.e. the songs, playlists data it contains are valid.
 If changes.json contains invalid data then a validation function can be added at line 29, 30 in App.java
 
 2. The changes.json can contain multiple tasks that refer to the same playlist. ex: add songs to a playlist multiple times. 
